@@ -17,6 +17,9 @@ customer:
   service:
     url: http://customer-service/api/customers
 
+server:
+  port: 8081
+
 resilience4j:
   circuitbreaker:
     instances:
