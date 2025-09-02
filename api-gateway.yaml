@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: customer-service
+              uri: lb://customer-service
+              predicates:
+                - Path=/api/customers/**
+            - id: account-service
+              uri: lb://account-service
+              predicates:
+                - Path=/api/accounts/**
+
+  application:
+    name: api-gateway
+
+eureka:
+  client:
+    service-url:
+        defaultZone: http://discovery-server:8761/eureka/
+
+server:
+  port: 9000
