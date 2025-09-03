@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/customer_db
+    url: jdbc:postgresql://db-customer:5432/customer_db
     username: admin
     password: admin
     driver-class-name: org.postgresql.Driver
@@ -10,9 +10,9 @@ spring:
 
   application:
     name: customer-service
-  
+
   rabbitmq:
-    host: rabbitmq   
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest
@@ -24,5 +24,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://discovery-server:8761/eureka/
-
-
